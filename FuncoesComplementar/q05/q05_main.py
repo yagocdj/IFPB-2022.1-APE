@@ -10,3 +10,16 @@ potência.
 math.cos(numero): retorna o cosseno do número em radiano (da biblioteca
 math).
 """
+
+import q05_functions as q05f
+import math
+
+# MAIN
+
+x = int(input('Digite um número: '))
+
+# Exibindo o cosseno
+math_cosseno = math.cos(x)
+meu_cosseno = q05f.cosseno(x)
+print(f'\nCosseno da minha função:\n{meu_cosseno}')
+print(f'\nCosseno da função math:\n{math_cosseno}')

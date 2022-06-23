@@ -1,11 +1,3 @@
-n = int(input())  # número de mensagens trazidas pelo ancião
-mensagens = [input() for i in range(n)]
-contador_fada = 0
+conta = 2 + (1 * (2 / 4))
 
-# percorrendo cada mensagem e verificando se há pelo menos um trecho "fada"
-# nelas
-for mensagem in mensagens:
-    mensagem.lower()
-    if mensagem.count('fada') >= 1:
-        contador_fada += 1
-print(contador_fada)
+print(conta)
