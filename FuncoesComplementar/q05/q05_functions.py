@@ -31,9 +31,9 @@ Função para calcular o cosseno
 
 def cosseno(x):
     resultado = float()
-    sinal = -1
+    sinal = 1
     # i começa em 2 e vai até 40 com step de 2
-    for i in range(2, 21, 2):
+    for i in range(2, 41, 2):
         if i == 2:
             resultado = 1 - (potencia(x, i) / fatorial(i))
         else:
