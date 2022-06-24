@@ -11,6 +11,8 @@ números primos entre 1 e 100.
 
 def primo(number):
     valor_primo = True
+    if number == 1:
+        valor_primo = False
     for i in range(2, number):
         if number % i == 0:
             valor_primo = False
