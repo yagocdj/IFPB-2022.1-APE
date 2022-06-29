@@ -5,7 +5,7 @@
 
 
 def ler_matriz(linhas=3, colunas=3):
-    matriz = []
+    matriz = []  # Vetor que receberá "linhas" vetores
     for i in range(linhas):
         vetor = []
         for j in range(colunas):
