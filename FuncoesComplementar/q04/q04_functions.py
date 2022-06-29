@@ -1,47 +1,39 @@
-# Biblioteca de funções da questão 4
+# Biblioteca de funções para a questão 4
 
-"""
-Função para gerar e ler uma matriz, tendo a ordem como parâmetro
-"""
+# função para gerar e ler uma matriz, sendo passados como parâmetros a
+# ordem da matriz.
 
 
-def gerar_matriz(ordem):
+def ler_matriz(linhas=3, colunas=3):
     matriz = []
-    for i in range(ordem):
+    for i in range(linhas):
         vetor = []
-        for j in range(ordem):
+        for j in range(colunas):
             vetor.append(int(input()))
         matriz.append(vetor)
     return matriz
 
 
-"""
-Função para exibir a matriz em sua representação clássica (linhas e colunas)
-"""
+# função para exibir uma matriz em sua representação clássica (linhas e
+# colunas).
 
 
 def exibir_matriz(matriz):
     for vetor in matriz:
         for elemento in vetor:
-            print(elemento, end=' ')
+            print(elemento, end='  ')
         print()
 
 
-"""
-Função para somar duas matrizes
-"""
-
-# Obs.: as matrizes devem possuir a mesma ordem
+# função para somar duas matrizes.
 
 
-def somar_matriz(matriz1, matriz2, ordem):
-    matriz_resultante = [[0] * ordem for i in range(ordem)]
-    for i in range(ordem):
-        for j in range(ordem):
-            matriz_resultante[i][j] = matriz1[i][j] + matriz2[i][j]
+def soma_matriz(matriz1, matriz2):
+    linhas = len(matriz1)
+    colunas = len(matriz1[0])
+    matriz_resultante = [[0] * colunas for i in range(linhas)]
+    for linha in range(linhas):
+        for coluna in range(colunas):
+            matriz_resultante[linha][coluna] = matriz1[linha][coluna] + \
+                matriz2[linha][coluna]
     return matriz_resultante
-
-
-""" n = int(input('Ordem: '))
-matrix = gerar_matriz(n)
-exibir_matriz(matrix) """

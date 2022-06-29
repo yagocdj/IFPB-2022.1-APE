@@ -15,22 +15,21 @@ import q04_functions as q04f
 
 # MAIN
 
-# Lendo a ordem das matrizes
-ordem = int(input('Informe a ordem das matrizes: '))
+# Lendo a ordem das duas matrizes
+linhas = int(input('\nInforme a quantidade de linhas das matrizes: '))
+colunas = int(input('Informe a quantidade de colunas das matrizes: '))
 
-# Lendo e exibindo a matriz_a
-print('\nPreencha a matriz A:')
-matriz_a = q04f.gerar_matriz(ordem)
+# Lendo a matriz_a
+print('\nPreencha a matriz A:\n')
+matriz_a = q04f.ler_matriz(linhas, colunas)
+
+# Lendo a matriz_b
+print('\nPreencha a matriz B:\n')
+matriz_b = q04f.ler_matriz(linhas, colunas)
+
+# Gerando uma matriz_c cujos elementos representam a soma das duas outras
+# matrizes
+print('\nMatriz que corresponde à soma das outras duas matrizes:\n')
+matriz_resultante = q04f.soma_matriz(matriz_a, matriz_b)
+q04f.exibir_matriz(matriz_resultante)
 print()
-q04f.exibir_matriz(matriz_a)
-
-# Lendo e exibindo a matriz_b
-print('\nPreencha a matriz B:')
-matriz_b = q04f.gerar_matriz(ordem)
-print()
-q04f.exibir_matriz(matriz_a)
-
-# Somando matriz_a com matriz_b e exibindo uma matriz_c com o resultado
-print('\nMatriz resultante C:')
-matriz_c = q04f.somar_matriz(matriz_a, matriz_b, ordem)
-q04f.exibir_matriz(matriz_c)
