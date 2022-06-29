@@ -9,8 +9,8 @@ encrypted_words_list = []
 
 # Passada 1 - deslocar os caracteres
 
-transform_unicode = int()
-transform_character = str()
+transform_to_unicode = int()
+transform_to_character = str()
 shift_position = int()
 
 for word in words_list:
@@ -19,10 +19,10 @@ for word in words_list:
     for character in word:
         if (character >= 'a' and character <= 'z') or \
                 (character >= 'A' and character <= 'Z'):
-            transform_unicode = ord(character)
-            shift_position = transform_unicode + 3
-            transform_character = chr(shift_position)
-            encrypted_word += transform_character
+            transform_to_unicode = ord(character)
+            shift_position = transform_to_unicode + 3
+            transform_to_character = chr(shift_position)
+            encrypted_word += transform_to_character
     encrypted_words_list.append(encrypted_word)
 
 print(encrypted_words_list)
@@ -34,5 +34,11 @@ for i in range(len(encrypted_words_list)):
 
 print(encrypted_words_list)
 
-# Passada 3 - caracteres da metade para frente serão deslocados uma posição para esquerda
+# Passada 3 - caracteres da metade para frente serão deslocados uma posição
+# para a esquerda
 # de acordo com a tabela ASCII
+
+for word in encrypted_words_list:
+    shift_index = len(word) // 2
+
+    # TERMINAR ESTE PROGRAMA
