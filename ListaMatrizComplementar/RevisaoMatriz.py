@@ -26,9 +26,9 @@ notas = [[0] * quantidade_notas for i in range(quantidade_alunos)]
 
 # Gerar os vetores dos nomes, das médias e da situação de cada aluno
 
-nomes = [0] * quantidade_alunos
-medias = [0] * quantidade_alunos
-situacao = [0] * quantidade_alunos
+nomes = ['-'] * quantidade_alunos
+medias = [0.0] * quantidade_alunos
+situacao = ['-'] * quantidade_alunos
 
 # Ler os dados
 
@@ -44,7 +44,7 @@ for i in range(quantidade_alunos):
     soma_aluno = 0
     for j in range(quantidade_notas):
         # Gerar as 3 notas para cada aluno
-        notas[i][j] = randint(1,10)
+        notas[i][j] = randint(1, 10)
         soma_aluno += notas[i][j]
     media_aluno = soma_aluno / quantidade_notas
     medias[i] = media_aluno
@@ -77,7 +77,7 @@ for i in range(quantidade_alunos):
 
 # Exibindo o nome e a média dos alunos com média superior a média geral
 
-print(f'\nAlunos com média superior ou igual à média geral da turma:')
+print('\nAlunos com média superior ou igual à média geral da turma:')
 print()
 
 for i in range(quantidade_alunos):
