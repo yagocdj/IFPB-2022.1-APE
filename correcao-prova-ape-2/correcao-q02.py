@@ -2,9 +2,10 @@
 
 quantidade_times = 10  # Linhas
 quantidade_jogadores = 12  # Colunas
-alturas = [[0] * quantidade_jogadores for i in range(quantidade_times)]
+alturas = [[0.0] * quantidade_jogadores for i in range(quantidade_times)]
 
-# Preenchendo a matriz com as alturas dos jogadores de cada time e calculando as médias
+# Preenchendo a matriz com as alturas dos jogadores de cada time e calculando
+# as médias
 
 print('\nDigite as alturas dos jogadores de cada time.')
 
@@ -14,7 +15,7 @@ time_maior = 0
 
 for i in range(quantidade_times):
     print(f'\nTime {i + 1}')
-    soma_altura = 0
+    soma_altura = 0.0
     for j in range(quantidade_jogadores):
         alturas[i][j] = float(input(f'Jogador {j + 1}: '))
         soma_altura += alturas[i][j]
