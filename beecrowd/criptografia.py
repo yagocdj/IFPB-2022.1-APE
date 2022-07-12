@@ -1,19 +1,12 @@
 # Questão "Criptografia"
 
-N = int(input())  # quantidade de strings a serem criptografadas
-
-# Lista contendo as strings a serem criptografadas
-words_list = [input() for i in range(N)]
-partial_encrypted_list = []
-
-# Passada 1 - deslocar os caracteres que sejam letras minúsculas e maiúsculas
-transform_to_unicode = int()
-transform_to_character = str()
-shift_position = int()
-
-# Percorrendo cada palavra da lista de palavras
-for word in words_list:
+def first_position_shift(word):
+    # Passada 1 - deslocar os caracteres que sejam letras minúsculas/maiúsculas
+    transform_to_unicode = int()
+    transform_to_character = str()
+    shift_position = int()
     encrypted_word = str()
+
     letters = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'
 
     # Percorrendo cada carácter da palavra
@@ -35,32 +28,57 @@ for word in words_list:
         # Caso o carácter não seja uma letra maiúscula ou minúscula
         else:
             encrypted_word += character
-    # Adicionando a string criptografada a uma nova lista
-    partial_encrypted_list.append(encrypted_word)
 
-# Passada 2 - inverter as palavras
-for i in range(len(partial_encrypted_list)):
-    partial_encrypted_list[i] = partial_encrypted_list[i][::-1]
+    return encrypted_word
 
-# Passada 3 - caracteres da metade para frente serão deslocados uma posição
-# para a esquerda
-# de acordo com a tabela ASCII
 
-# Percorrendo a lista de palavras criptografadas
+def reverse_string(word):
+    # Passada 2 - inverter a palavra
+    word = word[::-1]
+    return word
 
-# Lista que terá as palavras completamente criptografadas
-final_encrypted_list = []
 
-for word in partial_encrypted_list:
+def second_position_shift(word):
+    # Passada 3 - caracteres da metade para frente serão deslocados uma posição
+    # para a esquerda
+    # de acordo com a tabela ASCII
     encrypted_word = str()
+
+    # Percorrendo os caracteres da palavra
     for index in range(len(word)):
+
+        # Deslocar a posição do carácter 1 unidade para esquerda
+        # caso o carácter esteja na metade pra frente
         if index >= len(word) // 2:
+
+            # Transformando o carácter em código unicode
             transform_to_unicode = ord(word[index])
+
+            # Deslocando o carácter uma unidade para esquerda (ASCII)
             shift_position = transform_to_unicode - 1
+
+            # Transformando o código unicode no seu respectivo carácter
             transform_to_character = chr(shift_position)
             encrypted_word += transform_to_character
+
+        # Apenas adicionar o carácter como está
         else:
             encrypted_word += word[index]
-    final_encrypted_list.append(encrypted_word)
 
-print(final_encrypted_list)
+    return encrypted_word
+
+
+# MAIN
+N = int(input())  # quantidade de strings a serem criptografadas
+
+for index in range(N):
+
+    # Ler a palavra a ser criptografada
+    word = input()
+
+    # Criptografar a palavra aplicando as funções anteriormente definidas
+    encrypted_word = second_position_shift(
+        reverse_string(first_position_shift(word)))
+
+    # Exibir a palavra criptografada
+    print(encrypted_word)
