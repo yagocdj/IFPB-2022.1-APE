@@ -16,8 +16,9 @@ for i in range(lines_number // 2):
     verse_last_letters = verse_last_word[-3:]
     rime_last_letters = rime_last_word[-3:]
 
-    for j in range(len(verse_last_letters)):
-        if verse_last_letters[j] == rime_last_letters[j]:
-            counter += 1
+    if verse_last_letters[-1] == rime_last_letters[-1]:
+        for j in range(len(verse_last_letters)):
+            if verse_last_letters[j] == rime_last_letters[j]:
+                counter += 1
 
 print(counter)
