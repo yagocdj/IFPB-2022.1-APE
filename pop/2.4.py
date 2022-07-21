@@ -21,4 +21,6 @@ for i in range(lines_number // 2):
             if verse_last_letters[j] == rime_last_letters[j]:
                 counter += 1
 
+# TERMINAR ESTE PROGRAMA
+
 print(counter)
