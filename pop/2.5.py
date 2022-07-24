@@ -15,20 +15,20 @@ while True:
     if current_position == 0:
         if photo[0] == 'X':
             print('Silêncio...')
-        if photo[0] == 'O' and photo[1] == 'X':
+        elif photo[1] == 'X':
             print('Tiro de Melão!!!')
             melon_counter += 1
-        if photo[0] == 'O' and photo[1] == 'O':
+        else:
             current_position += 1
             print(f'Correndo pro esconderijo {current_position}!')
     # Caso estejamos no esconderijo de maior posição
     elif current_position == len(photo) - 1:
         if photo[current_position] == 'X':
             print('Silêncio...')
-        if photo[current_position] == 'O' and photo[current_position-1] == 'X':
+        elif photo[current_position - 1] == 'X':
             print('Tiro de Melão!!!')
             melon_counter += 1
-        if photo[current_position] == 'O' and photo[current_position-1] == 'O':
+        else:
             current_position -= 1
             print(f'Correndo pro esconderijo {current_position}!')
     # Caso estejamos em qualquer outro esconderijo
@@ -36,7 +36,7 @@ while True:
         # print(current_postion)
         if photo[current_position] == 'X':
             print('Silêncio...')
-        if photo[current_position] == 'O':
+        else:
             if (
                 (photo[current_position + 1] == 'X') and
                 (photo[current_position - 1] == 'X')
