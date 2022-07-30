@@ -3,6 +3,10 @@
 # quantidade de casas do tabuleiro (sempre ímpar)
 n = int(input())
 coins_number = list(map(int, (input().split())))
-middle_place = len(coins_number) // 2
+# buraco
+middle_place = n // 2
 
-# TERMINAR ESTE PROGRAMA
+# quantidade mínima de turnos
+minimum_shift = middle_place * 2
+
+print(minimum_shift)
